@@ -1,0 +1,29 @@
+
+.Text-field {
+    bottom: 1em;
+    position: fixed;
+    left: 20%;
+}
+.Lobby-pad {
+    overflow-y: scroll;
+
+    margin-left: 10%;
+    width: 80%;
+
+    background-color: #F0EAD6;
+    height: 36em;
+    text-align: left;
+    padding-left: 1%;
+    padding-top: 1%;
+    box-shadow: 1px 1px 10px;
+
+}
+.User-name{
+    color: crimson;
+}
+.Content-list{
+    position: relative;
+}
+.Code-block{
+    text-align: left
+}
