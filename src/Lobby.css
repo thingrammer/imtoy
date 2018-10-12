@@ -4,10 +4,51 @@
     position: fixed;
     left: 20%;
 }
+.Issue-tag{
+    box-shadow: 1px 1px 4px green;
+    background-color: palevioletred;
+    margin-top:2em;
+    padding:4px 0px;
+    cursor: pointer;
+    border-radius: 1px;
+    font-size: 1.3em;
+}
+.Group-pad{
+    float: left;
+    position:fixed;
+    margin-left: 5%;
+    width: 5%;
+}
+.Group-tab{
+    box-shadow:  1px 1px 4px #441100;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow-x: hidden;
+    height: 2em;
+    /* width: 10em; */
+    background-color: gray;
+    margin-top:1em;
+    line-height: 2em;
+}
+.Group-tab-selected{
+    background-color: #5A85F1;
+}
+.Channel-title{
+    box-shadow:  1px 2px 5px;
+    overflow-x: hidden;
+    height: 2em;
+    background-color: white;
+    margin-bottom: 1em;
+    line-height: 2em;
+    font-size: 1.2em;
+    font-weight: bolder;
+    outline:none;
+    cursor: default ;
+}
 .Lobby-pad {
     overflow-y: scroll;
 
-    margin-left: 10%;
+    margin-left: 15%;
     width: 80%;
 
     background-color: #F0EAD6;
@@ -19,7 +60,28 @@
 
 }
 .User-name{
-    color: crimson;
+    color: #CF483D;
+    /* text-shadow: 1px 1px 0.1px; */
+}
+.Log-time{
+    font-size : 0.7em;
+    color: teal;
+}
+.Unsolved {
+    cursor: pointer;
+    float:right;
+    background-color: #FF6644;
+    border-radius: 2px;
+    padding: 4px;
+}
+.Solved {
+        float:right;
+    background-color: #118822;
+    border-radius: 2px;
+    padding: 4px;
+}
+.Text-content{
+       
 }
 .Content-list{
     position: relative;
