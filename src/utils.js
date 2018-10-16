@@ -19,19 +19,18 @@ export const post = (jsonData, callback = () => { }) => {
         body: jsonData
     }).then(res => console.log(res)).then(callback())
 }
-export const put = (idx, jsonData, callback = () => { }) => {
+export const idelete = (idx, callback = () => { }) => {
     // console.warn(jsonData)
     fetch(HOST + "?id=eq." + idx, {
-        method: 'patch',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'PATCH,OPTIONS,HEAD',
-            "Access-Control-Request-Method": "PATCH"
-        },
-        cache: "default",
-        body: jsonData
+        method: 'delete',
+        // headers: {
+        //     'Accept': 'application/json',
+        //     'Content-Type': 'application/json',
+        //     'Access-Control-Allow-Origin': '*',
+        //     'Access-Control-Allow-Methods': 'PATCH,OPTIONS,HEAD',
+        //     "Access-Control-Request-Method": "PATCH"
+        // },
+        // cache: "default",
     }).then(res => console.log("res", res), (error) => { console.log(error) }).then(callback())
 }
 export const patch = (idx, callback) => {

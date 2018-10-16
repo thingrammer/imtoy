@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Lobby.css';
 import { CodeBlock } from './CodeBlock';
-import { notifyMe, getUname, HOST, put, post, patch } from './utils';
+import { notifyMe, getUname, HOST, idelete, post, patch } from './utils';
 import { IssuePad } from './IssueWidgets';
 export class Lobby extends Component {
     constructor(props) {
@@ -37,7 +37,8 @@ export class Lobby extends Component {
                     body[0].id !== history[0].id &&
                     uname !== body[0].user_name &&
                     this.state.channel === body[0].channel &&
-                    history[0].channel === body[0].channel;
+                    history[0].channel === body[0].channel &&
+                    body.length > history.length;
                 if (notifyFlag) {
                     notifyMe(body[0].user_name + ": " + body[0].content)
                 }
@@ -82,6 +83,9 @@ export class Lobby extends Component {
         })
         post(jsonData, this.freshList)
     }
+    deleteItem(id) {
+        idelete(id)
+    }
     checkIssue = () => {
         this.setState({
             channel: 'issue'
@@ -104,7 +108,7 @@ export class Lobby extends Component {
                 }
             </div>
             {
-                this.state.channel === 'issue' ? <IssuePad/> :
+                this.state.channel === 'issue' ? <IssuePad /> :
                     <div className="Lobby-pad">
                         <b>{
                             this.state.history.map(e => {
@@ -117,6 +121,10 @@ export class Lobby extends Component {
                                         : <span onClick={
                                             () => this.resolve(idx)
                                         } className="Unsolved">{"Unresolved"}</span>}
+                                    {getUname() === "admin" ?
+                                        <span className="Delete-button" onClick={() => this.deleteItem(e.id)}>
+                                            DEL
+                                    </span> : null}
                                     <div className="Content-list">{
                                         e.lang === "text" ?
                                             <pre className="Text-content">{e.content || ""}</pre> :

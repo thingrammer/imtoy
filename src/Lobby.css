@@ -45,6 +45,14 @@
     outline:none;
     cursor: default ;
 }
+.Delete-button{
+    float:right;
+    margin-right:1px;
+    background-color: teal;
+    border-radius: 2px;
+    padding: 4px;
+    cursor: pointer;
+}
 .Lobby-pad {
     overflow-y: scroll;
 
@@ -63,6 +71,14 @@
     color: #CF483D;
     /* text-shadow: 1px 1px 0.1px; */
 }
+.Log-time:after { 
+    content: " .............................................................................................................................................................................................................................................................................................................................." 
+      /* border-bottom: 2px dotted #ddd; */
+        /* box-sizing: border-box; */
+
+
+}
+
 .Log-time{
     font-size : 0.7em;
     color: teal;
